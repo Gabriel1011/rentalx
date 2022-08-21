@@ -1,0 +1,11 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true
+}
