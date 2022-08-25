@@ -1,5 +1,5 @@
 import { appDataSource } from "../../../../database/data-source";
-import { AppError } from "../../../../Error/appError";
+import { AppError } from "../../../../errors/appError";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { UsersRepositoryFake } from "../../repositories/repositoriesFakes/UsersRepositoryFake";
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";

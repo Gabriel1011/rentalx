@@ -1,4 +1,4 @@
-import { AppError } from "../../../Error/appError";
+import { AppError } from "../../../errors/appError";
 import { ICategoriesRepository } from "../repositories/Interfaces/ICategoriesrepository";
 
 interface IRequest {
