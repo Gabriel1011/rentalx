@@ -19,7 +19,7 @@ interface IRespose {
 }
 
 @injectable()
-class AuthenticateUserCase {
+class AuthenticateUserUseCase {
   constructor(
     @inject("UserRepository")
     private userRepository: IUserRepository
@@ -46,4 +46,4 @@ class AuthenticateUserCase {
   }
 }
 
-export { AuthenticateUserCase };
+export { AuthenticateUserUseCase };
