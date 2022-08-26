@@ -1,11 +1,11 @@
 import { Repository } from "typeorm";
 
-import { appDataSource } from "../../../database/data-source";
 import { Category } from "../entities/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "./Interfaces/ICategoriesrepository";
+} from "../../../repositories/Interfaces/ICategoriesrepository";
+import { appDataSource } from "../../../../../shared/infra/typeorm/data-source";
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>; // eslint-disable-next-line no-use-before-define

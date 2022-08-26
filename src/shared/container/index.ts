@@ -1,11 +1,11 @@
 import { container } from "tsyringe";
 
+import { UsersRepository } from "../../modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { IUserRepository } from "../../modules/accounts/repositories/interfaces/IUserRepository";
-import { UsersRepository } from "../../modules/accounts/repositories/UsersRepository";
-import { CategoriesRepository } from "../../modules/cars/repositories/CategoriesRepository";
+import { CategoriesRepository } from "../../modules/cars/infra/typeorm/repositories/CategoriesRepository";
+import { SpecificationsRepository } from "../../modules/cars/infra/typeorm/repositories/SpecificationsRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/Interfaces/ICategoriesrepository";
 import { ISpecificationsRepository } from "../../modules/cars/repositories/Interfaces/ISpecificationsRepository";
-import { SpecificationsRepository } from "../../modules/cars/repositories/SpecificationsRepository";
 import { CreateSpecificationService } from "../../modules/cars/services/CreateSpecificationService";
 
 container.registerSingleton<ICategoriesRepository>(

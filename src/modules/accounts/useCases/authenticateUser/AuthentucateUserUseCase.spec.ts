@@ -1,4 +1,4 @@
-import { appDataSource } from "../../../../database/data-source";
+import { appDataSource } from "../../../../shared/infra/typeorm/data-source";
 import { AppError } from "../../../../errors/appError";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { UsersRepositoryFake } from "../../repositories/repositoriesFakes/UsersRepositoryFake";
