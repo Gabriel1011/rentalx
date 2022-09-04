@@ -1,7 +1,6 @@
 import { hash } from "bcrypt";
 import { v4 as uuidV4 } from "uuid";
 
-import { User } from "../../../../modules/accounts/infra/typeorm/entities/User";
 import { appDataSource } from "../data-source";
 
 async function create() {
@@ -13,6 +12,7 @@ async function create() {
     values('${id}', 'admin','123123123','admin@rentx.com.br', '${password}', true, now())`);
   });
 
+  appDataSource.destroy();
   // const userAdmin: User = {};
 }
 
