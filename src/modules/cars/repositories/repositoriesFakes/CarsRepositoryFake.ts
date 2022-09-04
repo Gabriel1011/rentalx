@@ -19,6 +19,10 @@ class CarsRepositoryFake implements ICarsRepository {
     return this.cars.find((car) => car.license_plate === licensePlate);
   }
 
+  async findById(id: string): Promise<Car> {
+    return this.cars.find((car) => car.id === id);
+  }
+
   async findAvailable(
     name?: string,
     brand?: string,
