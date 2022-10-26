@@ -11,12 +11,22 @@ class CarsImagesRepository implements ICarsImagesRepository {
     this.repository = appDataSource.getRepository(CarImage);
   }
 
+  async find(id: string): Promise<CarImage> {
+    const imageCar = await this.repository.findOneBy({ id });
+
+    return imageCar;
+  }
+
   async create(car_id: string, image_name: string): Promise<CarImage> {
     const carImage = this.repository.create({ car_id, image_name });
 
     await this.repository.save(carImage);
 
     return carImage;
+  }
+
+  async delete(image_id: string): Promise<void> {
+    await this.repository.delete(image_id);
   }
 }
 

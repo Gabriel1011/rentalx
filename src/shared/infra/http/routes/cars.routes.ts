@@ -5,6 +5,7 @@ import uploadConfig from "../../../../config/upload";
 import { CreateCarController } from "../../../../modules/cars/useCases/createCars/CreateCarController";
 import { CreateCarSpecificationController } from "../../../../modules/cars/useCases/createCarSpecification/CreateCarSpecificationController";
 import { ListAvailableCarsController } from "../../../../modules/cars/useCases/listAvailableCars/ListAvailableCarsController";
+import { RemoveCarImageController } from "../../../../modules/cars/useCases/removeCarImage/RemoveCarImageController";
 import { UploadCarImagesController } from "../../../../modules/cars/useCases/uploadCarImages/UploadCarImagesController";
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
@@ -35,6 +36,13 @@ carsRoutes.post(
   ensureAdmin,
   uploadCarImages.array("images"),
   new UploadCarImagesController().handle
+);
+
+carsRoutes.delete(
+  "/images/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  new RemoveCarImageController().handle
 );
 
 export { carsRoutes };

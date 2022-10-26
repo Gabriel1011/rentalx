@@ -11,12 +11,12 @@ interface IRequest {
 class UploadCarImagesUseCase {
   constructor(
     @inject("CarsImagesRepository")
-    private carsImageRepository: ICarsImagesRepository
+    private carsImagesRepository: ICarsImagesRepository
   ) {}
 
   async execute({ car_id, images_name }: IRequest): Promise<void> {
     images_name.map(async (image) => {
-      await this.carsImageRepository.create(car_id, image);
+      await this.carsImagesRepository.create(car_id, image);
     });
   }
 }
