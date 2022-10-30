@@ -6,6 +6,7 @@ import { Car } from "../../../modules/cars/infra/typeorm/entities/Car";
 import { CarImage } from "../../../modules/cars/infra/typeorm/entities/CarImage";
 import { Category } from "../../../modules/cars/infra/typeorm/entities/Category";
 import { Specification } from "../../../modules/cars/infra/typeorm/entities/Specification";
+import { Rental } from "../../../modules/rentals/infra/entities/Rental";
 
 export const appDataSource = new DataSource({
   type: "postgres",
@@ -14,6 +15,6 @@ export const appDataSource = new DataSource({
   username: "rentalx",
   password: "rentalx123",
   database: "rentalx",
-  entities: [Category, Specification, User, Car, CarImage], // [`${__dirname}/**/entities/*{ts,js}`],
+  entities: [Category, Specification, User, Car, CarImage, Rental], // [`${__dirname}/**/entities/*{ts,js}`],
   migrations: [`${__dirname}/**/migrations/*{ts,js}`],
 });
