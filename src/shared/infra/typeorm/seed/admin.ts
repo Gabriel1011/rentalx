@@ -4,15 +4,15 @@ import { v4 as uuidV4 } from "uuid";
 import { appDataSource } from "../data-source";
 
 async function create() {
-  appDataSource.initialize().then(async () => {
-    const id = uuidV4();
-    const password = await hash("admin", 8);
+  const connection = await appDataSource.initialize();
 
-    appDataSource.query(`INSERT INTO USERS(id, name, driver_license, email, password, "isAdmin", created_at)
+  const id = uuidV4();
+  const password = await hash("admin", 8);
+
+  await connection.query(`INSERT INTO USERS(id, name, driver_license, email, password, "isAdmin", created_at)
     values('${id}', 'admin','123123123','admin@rentx.com.br', '${password}', true, now())`);
-  });
 
-  appDataSource.destroy();
+  await appDataSource.destroy();
   // const userAdmin: User = {};
 }
 
