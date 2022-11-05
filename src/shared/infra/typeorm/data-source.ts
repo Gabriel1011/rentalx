@@ -17,4 +17,5 @@ export const appDataSource = new DataSource({
   database: process.env.NODE_ENV === "test" ? "rentalx_test" : "rentalx",
   entities: [Category, Specification, User, Car, CarImage, Rental], // [`${__dirname}/**/entities/*{ts,js}`],
   migrations: [`${__dirname}/**/migrations/*{ts,js}`],
+  logging: true,
 });
