@@ -1,9 +1,10 @@
 import dayjs from "dayjs";
 
+import { RentalsRepositoryFake } from "@modules/rentals/repositories/repositoriesFakes/RentalsRepositoryFake";
+
 import { AppError } from "../../../../errors/appError";
 import { DayjsDateProvider } from "../../../../shared/container/providers/DateProvider/DayjsDateProvider";
 import { CarsRepositoryFake } from "../../../cars/repositories/repositoriesFakes/CarsRepositoryFake";
-import { RentalsRepositoryFake } from "../../repositories/repositoriesFakes/RentalsRepositoryFake";
 import { CreateRentalUseCase } from "./CreateRentalUseCase";
 
 let createRentalUseCase: CreateRentalUseCase;

@@ -1,4 +1,4 @@
-import { Repository } from "typeorm";
+import { IsNull, Repository } from "typeorm";
 
 import { appDataSource } from "../../../shared/infra/typeorm/data-source";
 import { ICreateRentalDTO } from "../dtos/ICreateRentalDTO";
@@ -13,11 +13,13 @@ class RentalsRepository implements IRentalsRepository {
   }
 
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
-    return this.repository.findOne({ where: { car_id, end_date: null } });
+    return this.repository.findOne({ where: { car_id, end_date: IsNull() } });
   }
+
   async findOpenRentalByUser(user_id: string): Promise<Rental> {
-    return this.repository.findOne({ where: { user_id, end_date: null } });
+    return this.repository.findOne({ where: { user_id, end_date: IsNull() } });
   }
+
   async create({
     id,
     car_id,
